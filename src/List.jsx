@@ -2,6 +2,7 @@ import {
 	Badge,
 	Box,
 	Button,
+	Center,
 	Container,
 	Flex,
 	Image,
@@ -20,7 +21,7 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 
-import { Link as BuenLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const user = [
 	{ nombre: 'Pedro', edad: 20, carrera: 'Ingeniería', hobbie: 'Futbol' },
@@ -37,11 +38,14 @@ const user = [
 function List() {
 	return (
 		<Box>
-			<Button>
-				<BuenLink to='/form'>Form</BuenLink>
-			</Button>
-
 			<Flex direction='column' pt={{ base: '120px', md: '75px', sm: '20px' }}>
+				<Center>
+					<Box>
+						<Link to='/Form'>
+							<Button colorScheme={'gray'}>Form</Button>
+						</Link>
+					</Box>
+				</Center>
 				<Container maxW={'container.xl'}>
 					<Tabs variant='enclosed'>
 						<TabList>
@@ -75,6 +79,7 @@ function List() {
 															<Text
 																fontSize='md'
 																fontWeight='bold'
+																color={'gray.700'}
 																minWidth='10px'
 															>
 																{el.nombre}
@@ -90,11 +95,7 @@ function List() {
 
 												<Td>
 													<Flex direction='column'>
-														<Text
-															fontSize='sm'
-															color='gray.700'
-															fontWeight='normal'
-														>
+														<Text fontSize='sm' fontWeight='normal'>
 															{el.edad}
 														</Text>
 													</Flex>
@@ -110,7 +111,7 @@ function List() {
 														fontSize='md'
 														fontWeight='bold'
 														pb='.5rem'
-														color='blue.500'
+														color='green.500'
 													>
 														{el.hobbie}
 													</Text>

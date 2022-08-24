@@ -83,6 +83,7 @@ function Form() {
 				status: 'success',
 				isClosable: 'true',
 				duration: '2500',
+				position: 'bottom-left',
 			});
 			setDatos({
 				name: input.name,
@@ -106,9 +107,11 @@ function Form() {
 				bg={useColorModeValue('gray.50', 'gray.800')}
 			>
 				<Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
-					<BuenLink to='/'>
-						<Button>Home asda</Button>
-					</BuenLink>
+					<Center>
+						<BuenLink to='/'>
+							<Button>Home</Button>
+						</BuenLink>
+					</Center>
 					<Stack align={'center'}>
 						<Heading fontSize={'4xl'}>Sign in to your account</Heading>
 						<Text fontSize={'lg'} color={'gray.600'}>
@@ -147,9 +150,7 @@ function Form() {
 										rounded='md'
 									/>
 									{!errors.name ? (
-										<FormHelperText>
-											Name, first letter with upper case
-										</FormHelperText>
+										<FormHelperText>Name, text only</FormHelperText>
 									) : (
 										<FormErrorMessage>Name is required.</FormErrorMessage>
 									)}
@@ -196,7 +197,7 @@ function Form() {
 									</FormLabel>
 
 									<Input
-										type='text'
+										type='password'
 										value={input.pass}
 										onChange={handleChange}
 										mt={1}
